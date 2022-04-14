@@ -28,11 +28,11 @@ public class PCComponentController {
                 .orElseThrow(() -> new PCComponentNotFoundException(id));
     }
 
-    @GetMapping("/**")
+    @GetMapping("/")
     public String getHome() {
         return "<h1>Welcome to Warehouse API!</h1>" +
-                "Go to: <span style='font-family:monospace; font-weight:bold;'>/h2-console</span> for db access.<br><br>" +
-                "Go to <span style='font-family:monospace; font-weight:bold;'>/components</span> for PCcomponent API<br>" +
-                "Use <span style='font-family:monospace; font-weight:bold;'>/component/id</span> for specific component.";
+                "Go to: <span style='font-family:monospace; font-weight:bold;'><a href=\"/h2-console\">/h2-console</a></span> for db access.<br><br>" +
+                "Go to <span style='font-family:monospace; font-weight:bold;'><a href=\"/components\">/components</a></span> for PCcomponent API<br>" +
+                "Use <span style='font-family:monospace; font-weight:bold;'><a href=\"/component/1\">/component/id</a></span> for specific component.";
     }
 }
