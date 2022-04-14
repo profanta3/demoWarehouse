@@ -29,4 +29,12 @@ public class PCComponentController {
         return this.repository.findById(id)
                 .orElseThrow(() -> new PCComponentNotFoundException(id));
     }
+
+    @GetMapping("/**")
+    public String getHome() {
+        return "<h1>Welcome to Warehouse API!</h1>" +
+                "Go to: <span style='font-family:monospace; font-weight:bold;'>/h2-console</span> for db access.<br><br>" +
+                "Go to <span style='font-family:monospace; font-weight:bold;'>/component</span> for PCcomponent API<br>" +
+                "Use <span style='font-family:monospace; font-weight:bold;'>/component/id</span> for specific component.";
+    }
 }
